@@ -1,25 +1,24 @@
- let sumaEdades = 0;
+let edades = [];
+for (let i = 0; i < 5; i++) {
+    let edad = parseInt(prompt("Introduce la edad de la persona " + (i + 1) + ":"));
+    edades.push(edad);
+}
 
+let sumaEdades = 0;
 
-    for (let i = 1; i <= 5; i++) {
-        let edad = parseFloat(prompt("Ingresa la edad de la persona " + i + ":"));
-
-
-        if (edad > 0) {
-            sumaEdades += edad;
-        } else {
-            console.log("Edad no válida ingresada para la persona " + i);
-
-        }
-
-
-
-    let edadPromedio = sumaEdades / 5;
-
-
-    if (edadPromedio >= 18) {
-        console.log("La edad promedio es " + edadPromedio + ". Es mayor o igual a la mayoría de edad.");
+for (let i = 0; i < edades.length; i++) {
+    if (edades[i] > 0) {
+        sumaEdades += edades[i];
     } else {
-        console.log("La edad promedio es " + edadPromedio + ". Es menor que la mayoría de edad.");
+        console.log("Edad inválida: " + edades[i]);
     }
 }
+
+let edadPromedio = sumaEdades / 5;
+
+if (edadPromedio >= 18) {
+    console.log("La edad promedio es " + edadPromedio + ". Es mayor de edad.");
+} else {
+    console.log("La edad promedio es " + edadPromedio + ". Es menor de edad.");
+}
+
